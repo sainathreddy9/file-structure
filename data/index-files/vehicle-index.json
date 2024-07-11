@@ -1,0 +1,8 @@
+{
+  "vehicles": [
+    {
+      "indexFile": "data/vehicles/ka78.json",
+      "vehicleNumber": "ka78"
+    }
+  ]
+}

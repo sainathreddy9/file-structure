@@ -1,0 +1,59 @@
+{% extends "pages/layouts/base.html" %}
+
+{% load staticfiles %}
+{% block content %}
+{% include "pages/layouts/form-body.jsp" %}
+<center>
+    <form name="add_fineForm" action="/add_fineSubmit/" method="post">
+        {% csrf_token%}
+		<div id="simpleBox">
+            <h4><font color="red">{{ message}}</font></h4>
+			<h2 id="heading">Enter the following details </h2>
+
+			<table id="textAlign">
+				<tr>
+					<td>Vehicle Number &nbsp;&nbsp;<font color="red">*</font></td>
+                    <td><input type ="text" name="vehicleNumber"></td>
+
+				</tr>
+				<tr>
+					<td>Location &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">*</font></td>
+                     <td><select name="location">
+                        <option value="BTM Layout">BTM Layout</option>
+                        <option value="BG Road ">BG Road </option>
+                        <option value="Indira Nagar">Indira Nagar</option>
+                        <option value="Kanakapura Road">Kanakapura Road	</option>
+                        <option value="MG Road">MG Road</option>
+                    </select>
+                    </td>
+
+				</tr>
+                <tr>
+                    <td>Violation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">*</font></td>
+                    <td><select name="violation">
+                        <option value="Jumping Traffic Signal">Jumping Traffic Signal</option>
+                        <option value="No Helmet">No Helmet</option>
+                        <option value="No Parking">No Parking</option>
+                        <option value="Drunken Drive">Drunken Drive	</option>
+                        <option value="Defective Number Plate">Defective Number Plate</option>
+
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+					<td>Fine Amount &nbsp;&nbsp;<font color="red">*</font></td>
+                    <td><input type ="text" name="amount"></td>
+				</tr>
+                <tr>
+					<td>Fine Date &nbsp;&nbsp;<font color="red">*</font></td>
+                    <td><input type ="text" name="fine_date"></td>
+				</tr>
+			</table>
+			<br />
+			<input type="submit" value="Submit"
+				class="specialButton" />
+		</div>
+  </form>
+</center>
+{% include "pages/layouts/footer.jsp" %}
+{% endblock %}
